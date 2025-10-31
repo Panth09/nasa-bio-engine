@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "path": "process",
+      "path": "api/process",
         "responseMode": "responseNode",
         "options": {}
       },

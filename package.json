@@ -2,9 +2,6 @@
   "name": "n8n-vercel",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "vercel dev"
-  },
   "dependencies": {
     "n8n": "^1.62.0",
     "sqlite3": "^5.1.7"

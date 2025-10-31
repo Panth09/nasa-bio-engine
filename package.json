@@ -1,16 +1,17 @@
 {
-  "name": "n8n-vercel",
+  "name": "n8n-bio-engine",
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "n8n": "^1.62.0",
     "sqlite3": "^5.1.7"
   },
   "engines": {
     "node": "22.x"
-  },
-  "scripts": {
-    "dev": "vercel dev"
   }
 }

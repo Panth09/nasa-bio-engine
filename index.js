@@ -1,21 +1,21 @@
 // index.js
-import { createN8nApp } from 'n8n';
+import n8n from 'n8n';
 
-let n8nApp;
+let app;
 
 export default async function handler(req, res) {
-  if (!n8nApp) {
-    n8nApp = await createN8nApp({
+  if (!app) {
+    app = await n8n.createApp({
       config: {
         path: '/',
         workflowFolder: './workflows',
         database: { type: 'sqlite' },
-        executionMode: 'queue',
+        executionMode: 'regular',
         diagnostics: { enabled: false },
         telemetry: { enabled: false }
       }
     });
-    await n8nApp.prepare();
+    await app.prepare();
   }
-  return n8nApp.app(req, res);
+  return app.app(req, res);
 }

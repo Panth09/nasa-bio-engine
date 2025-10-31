@@ -1,5 +1,14 @@
 {
   "functions": {
-    "api/test.js": { "runtime": "nodejs18.x" }
+    "api/**/*.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 60
+    }
+  },
+  "build": {
+    "env": {
+      "N8N_DIAGNOSTICS_ENABLED": "false",
+      "N8N_TELEMETRY_DISABLED": "true"
+    }
   }
 }

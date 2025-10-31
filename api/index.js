@@ -1,21 +1,26 @@
 // api/index.js
 const { createN8nApp } = require('n8n');
 
-let n8nApp;
+let app;
 
 module.exports = async (req, res) => {
-  if (!n8nApp) {
-    // First request → initialise n8n
-    n8nApp = await createN8nApp({
-      // Minimal config – everything else comes from env vars
+  if (!app) {
+    app = await createN8nApp({
       config: {
-        path: '/api',               // optional, keeps UI at /api
+        path: '/',
         workflowFolder: '/vercel/path0/workflows',
-      },
+        database: {
+          type: 'sqlite',
+          sqlite: {
+            database: '/tmp/n8n.sqlite'
+          }
+        },
+        executionMode: 'queue',
+        diagnostics: { enabled: false },
+        telemetry: { enabled: false }
+      }
     });
-    await n8nApp.prepare();
+    await app.prepare();
   }
-
-  // Forward the request to n8n
-  return n8nApp.app(req, res);
+  return app.app(req, res);
 };

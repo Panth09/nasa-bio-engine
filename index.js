@@ -1,4 +1,4 @@
-// index.js (root)
+// index.js
 import { createN8nApp } from 'n8n';
 
 let n8nApp;
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     n8nApp = await createN8nApp({
       config: {
         path: '/',
-        workflowFolder: './workflows',  // ← relative to root
+        workflowFolder: './workflows',
         database: { type: 'sqlite' },
         executionMode: 'queue',
         diagnostics: { enabled: false },

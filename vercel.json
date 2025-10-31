@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "N8N_HOST": "{{process.env.VERCEL_URL}}",
+    "N8N_PROTOCOL": "https",
+    "N8N_PORT": "3000",
+    "WEBHOOK_URL": "https://{{process.env.VERCEL_URL}}",
+    "DB_TYPE": "sqlite",
+    "DB_SQLITE_DATABASE": "/tmp/n8n.sqlite",
+    "EXECUTIONS_MODE": "queue",
+    "QUEUE_HEALTH_CHECK_ACTIVE": "false",
+    "N8N_ENCRYPTION_KEY": "change-me-to-a-random-32-char-string"
+  }
+}

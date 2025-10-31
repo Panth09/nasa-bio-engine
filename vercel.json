@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "functions": {
     "api/index.js": {
       "runtime": "nodejs18.x",
@@ -17,6 +16,6 @@
     "QUEUE_HEALTH_CHECK_ACTIVE": "false",
     "N8N_DIAGNOSTICS_ENABLED": "false",
     "N8N_TELEMETRY_DISABLED": "true",
-    "N8N_ENCRYPTION_KEY": "change-me-to-32-chars-1234567890"
+    "N8N_ENCRYPTION_KEY": "n8n-vercel-32-char-encryption-key-123"
   }
 }
